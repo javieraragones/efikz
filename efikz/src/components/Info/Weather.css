@@ -1,0 +1,238 @@
+.weather {
+  font: inherit;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  background: none;
+  transition: 0.4s ease-out;
+  margin: 0;
+  padding: 0;
+}
+/** Weather info*/
+.search-location {
+  display: flex;
+  flex-wrap: nowrap;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  cursor: pointer;
+  font-family: inherit;
+  font-size: 1.1rem;
+  width: fit-content;
+}
+.weather-warm {
+  height: 90%;
+  max-height: 30px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  overflow: hidden;
+}
+.weather-widget {
+  text-align: center;
+  color: #fff;
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  align-items: center;
+  justify-content: center;
+  gap: 4px;
+}
+.weather-box {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+.temp {
+  font-size: 1.1rem;
+  text-align: left;
+}
+.weather-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.weather-icon img {
+  width: 48px;
+  aspect-ratio: 1;
+  margin: 0;
+}
+.location {
+  cursor: pointer;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  gap: 4px;
+}
+.location-text {
+  white-space: nowrap;
+}
+
+/** Set location*/
+.bar-not-shown {
+  display: none;
+}
+.bar-shown {
+  transform: translateY(0%);
+  max-width: 183.41px;
+}
+.search-box {
+  display: flex;
+  align-items: center;
+  justify-content: right;
+  gap: 4px;
+  width: 100%;
+}
+#search-bar {
+  width: 100%;
+  font: inherit;
+  font-size: 0.9rem;
+  padding: 3px 4px 3px 16px;
+  border: none;
+  background: #555;
+  border-radius: 16px;
+}
+#search-bar:focus {
+  outline: none;
+  border-bottom-color: #fff;
+  background: #777;
+}
+.btn-close {
+}
+
+/* Estilos anteriores
+
+/**buscador
+
+.weather-warm {
+  background: none;
+  transition: 0.4s ease-out;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.search-box {
+  background: rgba(255, 255, 255, 0.5);
+  border-radius: 15px;
+  transition: 0.4s ease-in-out;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.bar-not-shown {
+  display: none;
+}
+
+.bar-shown {
+  transform: translateY(0%);
+}
+
+.search-box #search-bar {
+  width: 100%;
+  padding: 8px;
+  flex: 1;
+  appearance: none;
+  background: none;
+  border: none;
+  outline: none;
+  border-radius: 15px;
+  color: #313131;
+  font-size: 14px;
+  transition: 0.3s ease;
+}
+.search-box {
+  margin-bottom: 0rem;
+}
+
+button {
+  cursor: pointer;
+}
+
+.btn-close {
+  position: absolute;
+  right: 1px;
+  background: transparent;
+  border: none;
+  padding: 5px 9px;
+  font-size: 18px;
+}
+
+.search-box #search-bar:focus {
+  background: rgba(255, 255, 255, 0.75);
+}
+
+.btn-search {
+  background: #fff;
+  border: none;
+  font-weight: bold;
+  color: #222;
+  padding: 4px 7px;
+  border-radius: 3px;
+  margin-top: 0;
+  transition: 0.2s ease-in-out;
+}
+
+
+/**Caja temp info
+.weather-widget {
+  text-align: center;
+  color: #fff;
+}
+
+.clean-search {
+  margin: 0.5em;
+  font-size: 0.8rem;
+}
+.wheather-set {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.weather-box {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.weather-box .temp {
+  margin-right: 10px;
+  font-size: 35px;
+  font-weight: 900;
+  text-align: left;
+}
+
+.weather-box {
+  font-size: 15px;
+}
+
+.weather-icon {
+  margin-right: -20px;
+  margin-bottom: -6px;
+}
+
+.weather-icon img {
+  width: 50px;
+  height: 50px;
+  margin: 0;
+}
+
+.weather-widget .location {
+  font-size: 16px;
+}
+
+.location {
+  cursor: pointer;
+}
+
+
+
+
+
+
+
+*/

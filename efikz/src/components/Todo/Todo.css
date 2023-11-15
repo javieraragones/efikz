@@ -1,0 +1,134 @@
+@import "../../../variables.css";
+
+/*SECTION TODO ADD*/
+.todo-form {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  width: 90%;
+  margin: 0;
+  padding: 0;
+}
+#todo-input {
+  padding: 15px 20px 15px 20px;
+  border-radius: 9999px;
+  border: solid 1px #6d6d6d;
+  background: var(--background-inputs);
+  width: 100%;
+  opacity: 0.7;
+  margin: 0;
+}
+#todo-input:focus {
+  opacity: 1;
+}
+.button-todo-form {
+  background: none;
+  border: none;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 9999px;
+  margin: 0;
+  height: 42px;
+  width: 42px;
+  aspect-ratio: 1 / 1;
+}
+
+/*ELEMENTS TODO LIST */
+.todo-item {
+  width: 100%;
+  padding: 8px;
+  border-radius: 8px;
+  box-shadow: 0px 0px 5px -3px #111;
+  background: #4f4f4f;
+}
+.todo-wrapper {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+.todo-check-text,
+.todo-edit-delete {
+  display: flex;
+  flex-direction: row;
+  overflow: hidden;
+  align-items: center;
+  gap: 8px;
+}
+.todo-check-text {
+  justify-content: start;
+  width: 85%;
+  margin: 0;
+  display: flex;
+  align-items: center;
+}
+.todo-text-container {
+  width: 100%;
+  align-items: center;
+  justify-content: left;
+  text-align: left;
+}
+.todo-text {
+  max-width: 85%;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  margin: 0;
+  font-size: 1.2rem;
+  font-family: inherit;
+}
+.check-controls {
+  margin-top: 4px;
+}
+.todo-controls {
+  font-size: 22px;
+}
+.todo-controls > * {
+  cursor: pointer;
+}
+.completed {
+  background: rgba(0, 0, 0, 0.459);
+  color: #888888;
+}
+
+/*Edit todo form*/
+.edit-todo-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.edit-todo-form {
+  height: 100%;
+  width: 90%;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: left;
+  margin: 0;
+  padding: 0;
+}
+#edit-input {
+  font-family: inherit;
+  font-size: 1.2rem;
+  font-weight: normal;
+  margin: 0 0 0 4px;
+  padding: 0;
+  border: none;
+  height: 100%;
+  background: none;
+  width: 85%;
+  max-width: 100%;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+#edit-input:focus {
+  background-color: var(--focus-highlight);
+  border-radius: 15px;
+  padding: 0 8px 0 4px;
+}

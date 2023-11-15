@@ -1,0 +1,88 @@
+@import "../../../variables.css";
+/*News cards - items*/
+.new-item {
+  flex: 1; /* Los elementos <li> ocuparán la altura restante disponible */
+}
+.new-card {
+  width: 100%;
+  height: 100%;
+  background: #353535;
+  border-radius: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: left;
+  backdrop-filter: blur(10px);
+  transition: 0.5s ease-in-out;
+  padding: 8px 4px;
+}
+
+.new-card:hover {
+  cursor: pointer;
+  box-shadow: -5px 1px 28px -5px rgba(194, 187, 187, 0.43) inset;
+  -webkit-box-shadow: -5px 1px 28px -5px rgba(194, 187, 187, 0.43) inset;
+  -moz-box-shadow: -5px 1px 28px -5px rgba(194, 187, 187, 0.43) inset;
+}
+
+.new-img img {
+  width: 70px;
+  height: 70px;
+  margin-left: 10px;
+  border-radius: 10px;
+  background: linear-gradient(#d7cfcf, #9198e5);
+  object-fit: cover;
+}
+
+.new-card:hover > .img {
+  transition: 0.5s ease-in-out;
+  background: linear-gradient(#9198e5, #712020);
+}
+
+.new-textBox {
+  width: calc(100% - 90px);
+  margin-left: 10px;
+  color: white;
+  font-family: "Poppins" sans-serif;
+  text-align: left;
+  padding: 4px;
+}
+
+.new-textContent {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.new-time {
+  font-size: 10px;
+}
+
+.new-title {
+  font-size: 16px;
+  font-weight: bold;
+
+  max-height: 3em; /* Altura máxima de 2 líneas (ajusta este valor según tus necesidades) */
+  line-height: 1em; /* Altura de línea igual a 1 línea de texto */
+  text-overflow: ellipsis;
+  overflow: hidden;
+}
+
+.new-desc {
+  margin-top: 8px;
+  font-size: 12px;
+  font-weight: lighter;
+
+  max-height: 3em; /* Altura máxima de 2 líneas (ajusta este valor según tus necesidades) */
+  line-height: 1em; /* Altura de línea igual a 1 línea de texto */
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.text-options {
+  white-space: nowrap; /* Evita el salto de línea */
+  overflow: hidden; /* Oculta el texto que se desborda */
+  text-overflow: ellipsis; /* Agrega puntos suspensivos al final del texto */
+  max-height: 2em; /* Altura máxima de 2 líneas (ajusta este valor según tus necesidades) */
+  line-height: 1em; /* Altura de línea igual a 1 línea de texto */
+  word-wrap: break-word; /* Permite saltos de línea automáticos para ajustar el texto */
+  overflow: hidden; /* Oculta cualquier contenido que se desborde */
+}
