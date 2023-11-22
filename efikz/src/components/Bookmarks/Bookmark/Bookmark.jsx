@@ -37,12 +37,12 @@ const Bookmark = ({ bookmark, deleteBookmark }) => {
                             alt='bookmark img'>
                         </img>
                     </div>
-                    <h3 className='bookmark-title'>
+                    <h5 className='bookmark-title'>
                         {
                             bookmark.bmTitle && bookmark.bmTitle !== ''
                                 ? bookmark.bmTitle
                                 : getTitle(bookmark.bmLink)
-                        }</h3>
+                        }</h5>
                 </a>
                 <TrashSimple size={18} weight="bold"
                     className='btn-delete-bookmark'

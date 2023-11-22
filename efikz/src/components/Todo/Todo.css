@@ -74,7 +74,7 @@
   text-align: left;
 }
 .todo-text {
-  max-width: 85%;
+  max-width: 95%;
   overflow: hidden;
   text-overflow: ellipsis;
   white-space: nowrap;

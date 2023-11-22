@@ -4,18 +4,23 @@ import { ArrowCounterClockwise } from '@phosphor-icons/react';
 
 
 const API_KEY = 'pub_3191650c3847940a1346ccde2a3cd5a9ba707'
-const url = `https://newsdata.io/api/1/news?country=es&category=technology&apikey=${API_KEY}`;
+const URL = `https://newsdata.io/api/1/news?country=es&category=technology&apikey=${API_KEY}`;
 const options = {
     method: 'GET',
 };
 
+
 export const NewsBox = () => {
     const [news, setNews] = useState([''])
     const [loadingNews, setLoadingNews] = useState(false);
+    const [nextPage, setNextPage] = useState('')
+
+    const NEXT_PAGE_URL = `${URL}&page=${nextPage}`
+
 
     const getNews = async () => {
         setLoadingNews(true);
-        await fetch(url, options)
+        await fetch(URL, options)
             .then(response => {
                 if (response.status !== 200) {
                     setNews('');
@@ -25,13 +30,10 @@ export const NewsBox = () => {
                 }
                 response.json()
                     .then(result => {
-                        //setNews(result);
                         setLoadingNews(false);
-                        //console.log(result)
-                        //const firstFourNews = [...result.results].splice(0, 4)
-                        //console.log("Primeras cuatro noticias", firstFourNews)
-                        const firstNews = [...result.results]
+                        const firstNews = removeDuplicateNews(result.results)
                         setNews(firstNews)
+                        setNextPage(result.nextPage)
                     })
             })
             .catch(err => {
@@ -39,9 +41,47 @@ export const NewsBox = () => {
             });
     }
 
+    const getSecondPageNews = async () => {
+        await fetch(NEXT_PAGE_URL, options)
+            .then(response => {
+                if (response.status !== 200) {
+                    setLoadingNews(false);
+                    console.log("Error al obtener noticias de la segunda página")
+                    return false;
+                }
+                response.json()
+                    .then(result => {
+                        const firstNews = result.results
+                        setNews(prevNews => [...prevNews, ...firstNews]);
+                    })
+            })
+            .catch(err => {
+                console.log(err);
+            })
+    }
+
+    const removeDuplicateNews = (newsArray) => {
+        // Crear un objeto para realizar un seguimiento de los títulos vistos
+        const seenTitles = {};
+        // Filtrar el array de noticias para eliminar duplicados
+        const uniqueNews = newsArray.filter((article) => {
+            // Verificar si el título ya ha sido visto
+            if (!seenTitles[article.title] /*&& article.image_url*/) {
+                // Si no ha sido visto, marcar como visto y mantener la noticia
+                seenTitles[article.title] = true;
+                return true;
+            } else {
+                // Si el título ya ha sido visto, omitir la noticia
+                return false;
+            }
+        });
+        return uniqueNews;
+    };
+
     useEffect(() => {
         // Llama a tu función para obtener las noticias y actualiza el estado "news"
         getNews();
+        getSecondPageNews()
     }, []); // El segundo argumento es un array vacío para que se ejecute solo una vez al montar el componente
 
     return (
@@ -57,7 +97,7 @@ export const NewsBox = () => {
                             ? <h4 className="loading-news">Cargando noticias...</h4>
                             :
                             news
-                                ? news.map((article, index) => (
+                                ? removeDuplicateNews(news).map((article, index) => (
                                     <li key={index} className='new-item' style={{ listStyle: 'none' }}>
                                         <a href={
                                             article.link

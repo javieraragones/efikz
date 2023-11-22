@@ -39,10 +39,10 @@
 .bookmark-img {
 }
 .bookmark-title {
-  max-height: 1em; /* Altura máxima de 1 línea (ajusta este valor según tus necesidades) */
-  line-height: 1em; /* Altura de línea igual a 1 línea de texto */
-  text-overflow: ellipsis;
+  max-width: 130px; /* Ancho máximo de 130px (ajusta este valor según tus necesidades) */
+  white-space: nowrap; /* Evita que el texto se divida en varias líneas */
   overflow: hidden;
+  text-overflow: ellipsis;
 }
 
 .btn-delete-bookmark {
