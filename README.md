@@ -1,22 +1,18 @@
-```sh
-EFIKZ
+# EFIKZ
 
-Proyecto personal sobre aplicación de organización.
+Personal project on organization application.
 
-Demo: https://javieraragones.github.io/efikz
+Demo: [Efikz Demo](https://javieraragones.github.io/efikz)
 
-Funciones incluidas:
--Lista de tareas
--Lista de marcadores
--Últimas noticias sobre tecnología en España.
--Información de fecha, hora y temperatura actual del usuario.
+## Included Features:
+- Task list
+- Bookmarks list
+- Latest technology news in Spain
+- User's current date, time, and temperature information
 
-Funciones por incluir:
--Guardar datos de usaurio en BBDD 
--Incluir login para guardar datos del usuario
--Notificaciones de escritorio
--Poder seleccionar entre diferentes APIs de Noticias
--Cambiar orden de tareas y marcadores
-
-
-```
+## Upcoming Features:
+- Save user data in the database
+- Implement login to save user data
+- Desktop notifications
+- Ability to select from different News APIs
+- Rearrange tasks and bookmarks order
