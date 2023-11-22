@@ -3,7 +3,7 @@ EFIKZ
 
 Proyecto personal sobre aplicación de organización.
 
-Demo: <a href="https://javieraragones.github.io/efikz"></a>
+Demo: https://javieraragones.github.io/efikz
 
 Funciones incluidas:
 -Lista de tareas
